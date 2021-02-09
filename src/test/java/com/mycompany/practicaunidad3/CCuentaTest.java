@@ -99,10 +99,10 @@ public class CCuentaTest {
     @Test
     public void testRetirar() throws Exception {
         System.out.println("Prueba del método retirar");
-        double cantidad = 2600.0;
+        double cantidad = 2500.0;
         CCuenta instance = new CCuenta("Juan López","1000-2365-85-123456789",2500,0);
         instance.retirar(cantidad);
-        assertEquals("Debe dar 1500",-100.0,instance.estado(),0);
+        assertEquals("Debe dar 1500",0.0,instance.estado(),0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -121,18 +121,20 @@ public class CCuentaTest {
         fail("The test case is a prototype.");
     }
  */   
-   /* @Test
+    @Test
     public void testRetirarIngresar() throws Exception {
         System.out.println("Prueba de ingreso/retirada");
-        double cantidad = 1000.0;
-        double cantidad2 = 250;
+        double cantidad = 2500;
+        double cantidad2 = 2500;
         CCuenta instance = new CCuenta("Juan López","1000-2365-85-123456789",2500,0);
         System.out.println("Antes de retirar dinero tenemos %.2f\n " + instance.estado());
         instance.retirar(cantidad);
+        assertEquals("Debe dar 2499",0.0,instance.estado(),0);
         System.out.println("Retiramos %.2f y nos queda %.2f\n " + cantidad + " " + instance.estado());
         instance.ingresar(cantidad2);
+        assertEquals("Debe dar 2500",2500.0,instance.estado(),0);
         System.out.println("Depués de ingresar %.2f tenemos %.2f\n " + cantidad2 + " " + instance.estado());
         
     }
-    */
+    
 }
